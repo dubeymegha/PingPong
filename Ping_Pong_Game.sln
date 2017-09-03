@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ping_Pong_Game", "Ping_Pong_Game\Ping_Pong_Game.csproj", "{103EE5FB-BE73-496D-9860-08448819F99E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sound", "Sound\Sound.csproj", "{556AD294-58F5-4AA7-8162-21CCC225CF26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{103EE5FB-BE73-496D-9860-08448819F99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{103EE5FB-BE73-496D-9860-08448819F99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{103EE5FB-BE73-496D-9860-08448819F99E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556AD294-58F5-4AA7-8162-21CCC225CF26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556AD294-58F5-4AA7-8162-21CCC225CF26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556AD294-58F5-4AA7-8162-21CCC225CF26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556AD294-58F5-4AA7-8162-21CCC225CF26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

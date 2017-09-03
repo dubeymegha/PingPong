@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Sound;
+ 
 namespace Ping_Pong_Game
 {
     public partial class Form1 : Form
@@ -19,22 +20,24 @@ namespace Ping_Pong_Game
         {
             InitializeComponent();
             timer1.Enabled = true;
-            Cursor.Hide();                                 //Hiding the cursor
-            this.FormBorderStyle = FormBorderStyle.None;   //Removing the border
-            //this.TopMost = true;                           //bring the form to the top
-            this.Bounds = Screen.PrimaryScreen.Bounds;     //make it fullscreen
-            racket.Top = playground.Bottom - (playground.Bottom / 10); //setting position of racket
+            Cursor.Hide();                                            //Hiding the cursor
+            this.FormBorderStyle = FormBorderStyle.None;              //Removing the border
+            //this.TopMost = true;                                    //bring the form to the top
+            this.Bounds = Screen.PrimaryScreen.Bounds;                //make it fullscreen
+            racket.Top = playground.Bottom- (playground.Bottom / 10); //setting position of racket
 
-            Gameover.Visible = false;//hiding the label
-            Gameover.Left = playground.Width / 2-Gameover.Width/2;
+            Gameover.Visible = false;                                 //hiding the label
+            Gameover.Left = playground.Width / 2-Gameover.Width/2;    //setting label at the center of the screen
             Gameover.Top = playground.Height / 2-Gameover.Height/2;
+            Class1.go();                                              //music added using own library
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            racket.Left = Cursor.Position.X - (racket.Width / 2); //setting the center of the racket to the position of the cursor
+            racket.Left = Cursor.Position.X - (racket.Width / 2);    //setting the center of the racket to the position of the cursor
 
-            ball.Left = ball.Left + speed_left;  //moving the ball
+            ball.Left = ball.Left + speed_left;                     //moving the ball
             ball.Top = ball.Top + speed_top;
 
             if (ball.Left >= racket.Left && ball.Bottom <= racket.Bottom && ball.Bottom >= racket.Top && ball.Right <= racket.Right) //Collision condition
@@ -54,6 +57,7 @@ namespace Ping_Pong_Game
                 //changing Color
                 Color randomColor = Color.FromArgb(rnd.Next(150,255), rnd.Next(150,255), rnd.Next(150,255));
                 playground.BackColor = randomColor;
+
 
             }
 
@@ -76,6 +80,7 @@ namespace Ping_Pong_Game
             {
                 timer1.Enabled = false;
                 Gameover.Visible = true;
+                Class1.stop();
             }
 
         }
@@ -91,15 +96,17 @@ namespace Ping_Pong_Game
             }
             if(e.KeyCode==Keys.F5)
             {
-                ball.Top = 50;
-                ball.Left = 50;
+                ball.Top = 10;
+                ball.Left = 10;
                 speed_left = 4;
                 speed_top = 4;
                 point = 0;
                 //points.Text = "0";
 
                 timer1.Enabled = true;
-                Gameover.Visible = false ;
+                Gameover.Visible = false;
+                playground.BackColor = Color.White;
+                Class1.go();
             }
         }
 
